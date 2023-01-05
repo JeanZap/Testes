@@ -14,8 +14,6 @@ function dedupe(list) {
   return Array.from(map.values());
 }
 
-console.log(dedupe([{ id: 1 }, { id: 1 }, { id: 2 }, { id: 2 }, { id: 2 }, { id: 3 }]));
-
 module.exports = dedupe;
 
 function denormalize({ primary, related, relatedName, referenceId }) {
@@ -27,17 +25,17 @@ function denormalize({ primary, related, relatedName, referenceId }) {
 
 denormalize({
   primary: [
-    { id: 1, name: 'John Doe' },
-    { id: 2, name: 'Jane Doe' },
-    { id: 3, name: 'Richard Roe' },
+    { id: 1, name: "John Doe" },
+    { id: 2, name: "Jane Doe" },
+    { id: 3, name: "Richard Roe" },
   ],
   related: [
-    { id: 1, customerId: 1, product: 'M1 MacBook Air', price: 999 },
-    { id: 2, customerId: 2, product: 'M1 MacBook Pro', price: 1299 },
-    { id: 3, customerId: 1, product: 'Dell XPS 9310', price: 1199 },
+    { id: 1, customerId: 1, product: "M1 MacBook Air", price: 999 },
+    { id: 2, customerId: 2, product: "M1 MacBook Pro", price: 1299 },
+    { id: 3, customerId: 1, product: "Dell XPS 9310", price: 1199 },
   ],
-  relatedName: 'orders',
-  referenceId: 'customerId',
+  relatedName: "orders",
+  referenceId: "customerId",
 });
 
 module.exports = denormalize;
